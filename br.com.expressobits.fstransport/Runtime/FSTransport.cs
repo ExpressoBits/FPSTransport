@@ -80,10 +80,7 @@ namespace ExpressoBits.Transport
             // Not support
         }
 
-        public override void Init()
-        {
-            
-        }
+        
 
         public override NetEventType PollEvent(out ulong clientId, out string channelName, out ArraySegment<byte> payload, out float receiveTime)
         {
@@ -95,10 +92,7 @@ namespace ExpressoBits.Transport
             connectionManager.Connection.SendMessage(data.Array);
         }
 
-        public override void Shutdown()
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public override SocketTasks StartClient()
         {
@@ -119,6 +113,24 @@ namespace ExpressoBits.Transport
             Server = SteamNetworkingSockets.CreateNormalSocket<EBSocketManager>(
                 NetAddress.AnyIp(Port));
             return SocketTask.Done.AsTasks();
+        }
+
+        public override void Shutdown()
+        {
+            SteamClient.Shutdown();
+        }
+
+        public override void Init()
+        {
+            try
+            {
+                SteamClient.Init(appId);
+            }
+            catch
+            {
+                Debug.LogError("Error when starting steam client!");
+            }
+            
         }
 
     }
