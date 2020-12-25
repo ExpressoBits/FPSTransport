@@ -5,6 +5,7 @@
       "depth": 0,
       "source": "local",
       "dependencies": {
+        "com.unity.multiplayer.mlapi": "0.0.1-preview.1",
         "com.unity.transport": "0.4.1-preview.1",
         "com.unity.jobs": "0.2.10-preview.13"
       }

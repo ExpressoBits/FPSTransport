@@ -84,7 +84,7 @@ namespace ExpressoBits.Transport
 
         public override NetEventType PollEvent(out ulong clientId, out string channelName, out ArraySegment<byte> payload, out float receiveTime)
         {
-            throw new NotImplementedException();
+            return NetEventType.Nothing;
         }
 
         public override void Send(ulong clientId, ArraySegment<byte> data, string channelName)
