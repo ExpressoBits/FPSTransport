@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "br.com.expressobits.fstransport": {
-      "version": "file:../../br.com.expressobits.fstransport",
+    "br.com.expressobits.fpstransport": {
+      "version": "file:../../br.com.expressobits.fpstransport",
       "depth": 0,
       "source": "local",
       "dependencies": {
